@@ -1,0 +1,119 @@
+
+body, input {
+    background-color: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 12px;
+    margin: 7px 12px;
+    text-align: center;
+}
+img {
+    border: medium none;
+}
+a {
+    color: #0000CC;
+}
+#l {
+    height: 64px;
+    margin: 66px 0 61px;
+}
+.r {
+    float: right;
+}
+#t {
+    height: 1em;
+    position: relative;
+    text-align: left;
+}
+#sf {
+    height: 50px;
+    left: 57px;
+    margin: 0 auto 33px;
+    position: relative;
+    text-align: left;
+    width: 587px;
+}
+#n {
+    font: 14px arial;
+    margin-bottom: 5px;
+    padding-left: 31px;
+    position: relative;
+}
+#n a, #n strong {
+    margin-right: 1.3em;
+}
+.q {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #D6D6D6;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    color: black;
+    float: left;
+    font: 16px/21px verdana;
+    height: 21px;
+    margin: 0;
+    padding: 4px;
+    vertical-align: top;
+    width: 422px;
+}
+.stb, .btnactive {
+    background: url("../images/i.png") no-repeat scroll left -116px #D4D4D4;
+    border: medium none;
+    color: black;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    height: 33px;
+    margin: 0 0 0 7px;
+    padding: 0;
+    width: 90px;
+}
+.btnactive {
+    background-position: left -152px;
+}
+.adv {
+    position: absolute;
+    right: 0;
+    top: 31px;
+}
+#ft {
+    color: #666666;
+    font-family: arial;
+    line-height: 21px;
+}
+.g {
+    color: #666666;
+    text-decoration: none;
+}
+.ba {
+    background: url("../images/i.png") no-repeat scroll right -70px transparent;
+    color: #666666;
+    padding-right: 15px;
+    text-decoration: none;
+}
+.tools {
+    font-size: 14px;
+    margin: 0 auto 93px;
+}
+.tools a {
+    margin: 0 9px 0 8px;
+}
+.qborder {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #818181 #B8B8B8 #B8B8B8 #818181;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+}

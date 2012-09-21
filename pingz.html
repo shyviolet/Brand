@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        <!-- Add your site or application content here -->
+        <div id="topbar">
+            <ul class="topnav">
+                <li><a onclick="navBar(this,'query=',true);" id="sogou_news" href="http://news.sogou.com/news">新闻</a></li>
+                <li>网页</li>
+                <li><a onclick="navBar(this,'query=',true)" id="sogou_music" href="http://mp3.sogou.com/music">音乐</a></li>
+                <li><a onclick="navBar(this,'query=',true)" id="sogou_pic" href="http://pic.sogou.com/pics">图片</a></li>
+                <li><a id="sogou_video" onclick="navBar(this,'query=',true)" href="http://v.sogou.com/v">视频</a></li>
+                <li><a onclick="navBar(this,'#lq=',false)" id="sogou_maps" href="http://map.sogou.com/">地图</a></li>
+                <li><a id="sogou_zhishi" onclick="navBar(this,'query=',true)" href="http://zhishi.sogou.com/">知识</a></li>
+                <li><a href="http://www.sogou.com/docs/more.htm">更多&gt;&gt;</a></li>
+            </ul>
+        </div><!-- topbar end here-->
+        
+		<div id="header">
+            <a class="logo" style="" href="/" title="回到搜狗首页">
+            </a>
+            <form id="searchForm" name="searchForm">
+                <div class="querybox">
+                    <div class="qborder">
+                        <div class="qborder2">
+                            <input id="upquery" class="query" type="text" autocomplete="off" value="京东" ov="" onfocus="" name="query">
+                            <img class="qreset2" width="15" height="16" title="清空" alt="清空" src="images/ff/reset.gif" style="display:block">
+                        </div>
+                    </div>
+                    <input id="searchBin" class="sbtn1" type="submit" value="搜狗搜索" uigs="searchBtn" onmouseout="this.className='sbtn1'" onmouseup="this.className='sbtn1'" onmousedown="this.className='btnactive'">
+                </div>
+            </form>
+        </div><!-- search form end here-->
+        
+		<div class="searchnavbox">
+            <ul id="searchnav" class="searchnav">
+                <li class="cur">
+                    <span>网页</span>
+                </li>
+                <li>
+                    <a id="inttab_43_1" hidefocus="" href="#">百科</a>
+                </li>
+                <li>
+                    <a id="inttab_41_2" hidefocus="" href="#">新闻</a>
+                </li>
+                <li>
+                    <a id="inttab_40_3" hidefocus="" href="#">论坛</a>
+                </li>
+                <li>
+                    <a id="inttab_28_4" hidefocus="" href="#">知识</a>
+                </li>
+                <li>
+                    <a id="inttab_39_5" hidefocus="" href="#">博客</a>
+                </li>
+                <li class="moresearch">
+                    <a id="navibtn" hidefocus="" href="#" class="">更多</a>
+                    <div id="navimore" class="moremenu" style="display: none;">
+                        <a id="inttab_18_6" href="#">快播</a>
+                        <a id="inttab_9_7" href="#">文档</a>
+                        <a id="inttab_29_8" href="#">招聘</a>
+                        <a id="inttab_30_9" href="#">购物</a>
+                        <a id="inttab_45_10" href="#">二手房</a>
+                        <a id="inttab_62_11" class="pro" href="#" target="_blank">产品大全</a>
+                    </div>
+                </li>
+                <li class="catetabfaq">
+                    <a id="catefaqlink" class="catefaqlink" hidefocus="true" onclick="return false;" href="#">什么是分类搜索</a>
+                    <div class="cateintro" style="display: none;">
+                        <div class="cateintro_t"></div>
+                        <div class="cateintro_m">搜狗分类搜索能够智能动态的判断查询词需求，提供详尽精准的分类标签，帮助用户更快捷准确的找到想要的信息。</div>
+                        <div class="cateintro_b">
+                            <div id="sg_ilikeshare" class="sharelist">
+                                分享：
+                                <a id="navshare_0_1" class="shareico sina_t" imgid="sina_share" title="分享到新浪微博" href="#">新浪</a>
+                                <a id="navshare_0_2" class="shareico qq_t" imgid="qq_share" title="分享到腾讯微博" href="#">腾讯</a>
+                                <a id="navshare_0_3" class="shareico sohu_t" imgid="sohu_share" title="分享到搜狐微博" href="#">搜狐</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- search navigation bar end here-->
+        
+		<div id="wrapper">
+            <span id="switchcolimg" class="switcher"></span>
+            <div id="sidebar" style="">
+                <ul class="sidenav1" id="left_timespan_ul">
+                    <li><strong>全部时间</strong></li>
+                    <li id="left_timespan_1">
+                        <a href="#">一天内</a>
+                    </li>
+                    <li id="left_timespan_2">
+                        <a href="#">一周内</a>
+                    </li>
+                    <li id="left_timespan_3">
+                        <a href="#">一月内</a>
+                    </li>
+                    <li id="left_timespan_4">
+                        <a href="#">一年内</a>
+                    </li>
+                </ul>
+                <ul class="sidenav1" id="left_laiyuan_ul">
+                    <li>
+                        <strong>全部来源</strong>
+                    </li>
+                    <li id="jhly_1">
+                        <a id="jhly_top_1" href="#">京东网上商城</a>
+                    </li>
+                    <li id="jhly_2">
+                        <a id="jhly_top_2" href="#">百度百科</a>
+                    </li>
+                    <li id="jhly_3">
+                        <a id="jhly_top_3" href="#">易购网</a>
+                    </li>
+                </ul>
+                <ul id="left_hint_ul" class="sidenav1">
+                    <li>
+                        <strong>您是不是要找</strong>
+                    </li>
+                    <li>
+                        <a id="left_hint_0" href="#" title="京东商城">京东商城</a>
+                    </li>
+                    <li>
+                        <a id="left_hint_1" href="#" title="京东商城首页">京东商城首页</a>
+                    </li>
+                    <li>
+                        <a id="left_hint_2" href="#" title="京东网上商城">京东网上商城</a>
+                    </li>
+                    <li>
+                        <a id="left_hint_3" href="#" title="京东网">京东网</a>
+                    </li>
+                    <li>
+                        <a id="left_hint_4" href="#" title="京东商城手机">京东商城手机</a>
+                    </li>
+                    <li>
+                        <a id="left_hint_5" href="#" title="360buy京东商城">360buy京东商城</a>
+                    </li>
+                </ul>
+                <div class="reset2">
+                    <a id="reset2" href="#">重置搜索选项</a>
+                </div>
+            </div><!--left sidebar end here-->
+            
+            <div id="right" class="right" style=""></div>
+            
+            <div id="main">
+                <style type="text/css">
+                    .centrecontent #zhuanqu { 
+                        width: expression((document.body.clientWidth >1024) ? "548px" : "auto" ); 
+                        max-width: 548px;
+                    }
+                    .spr { 
+                        border-collapse: collapse; 
+                        line-height:1.5; 
+                        width:100%; 
+                        margin-bottom:4px;
+                    }
+                    .spr img { margin-left: 4px;}
+                    .spr td { vertical-align: top; padding-top: 3px;}
+                    .sprtext { line-height:1.5;}
+                    .blt1, .blt2, .blt3, .blt4 { font-family: simsun;}
+                    .blt1 { color: #008000;}
+                    .blt2 { color: #F2443F;}
+                    .blt3 { color: #702991;}
+                    .blt4 { color: #FECF0C;}
+                    .sprlink:link, .sprlink:visited { color: #000; text-decoration: none;}
+                    .sprlink:hover { color: #008000;}
+                    .spr p, .sprtext p { margin:0; padding:0;}
+                    .sprbox { padding-left:18px;}
+                    #zhuanqu { margin:0 10px 10px;}
+                    #zhuanqu h2 { 
+                        font-weight:normal; 
+                        font-size:medium;
+                    }
+                    #zhuanqu h2 strong { 
+                        color:#c60a00; 
+                        font-weight:normal;
+                    }
+                    .url, .url a:visited { color:#008000;}
+                </style>
+                <h3 id="normal" class="typo-h3"># Normal(品专-普通样式头1)</h3>
+                <div id="zhuanqu" style="margin-bottom: 0pt;">
+                    <h2>
+                        <a href="#" target="_blank" id="" class="bdt"> 
+                            <em>360buy京东商城</em> 正品行货 货到付款 全网底价!
+                        </a>
+                    </h2>
+                    <table class="spr">
+                        <tbody>
+                            <tr>
+                                <td width="100">
+                                    <a href="#" target="_blank" id="37035_1.1">
+                                        <img src="images/403227.jpg" onerror="this.parentNode.parentNode.style.display='none';" align="left" height="90" width="90">
+                                    </a>
+                                </td>
+                                <td>
+                                    京东商城,综合网购首选.<a href="#" target="_blank" id="37035_1.2.1">家用电器</a>、<a href="#" target="_blank" id="37035_1.2.1">手机数码</a>、服饰、<a href="#" target="_blank" id="37035_1.2.1">电脑</a>、<a href="#" target="_blank" id="37035_1.2.1">家居</a>、化妆、<a href="#" target="_blank" id="37035_1.2.1">图书</a>等品类.京东承诺:所售商品100%正品行货,全国联保,机打发票,价格更实惠;支持货到付款,送货上门及POS刷卡服务,尽享安全便捷.
+                                    <p class="pageinfo">
+                                        <cite>http://www.360buy.com</cite>&nbsp;&nbsp;
+                                        <a href="#" target="_blank" style="COLOR:#666666;font-size:12;" onclick="javascript:this.style.color='#660066';">品牌推广</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <h3 id="normal" class="typo-h3"># Normal(中部-栏目中4)</h3>
+                    <div class="sprtext">
+                        <p>
+                            <span class="blt1">●</span> 
+                            <a href="#" target="_blank" id="37035_2.0">京东3剑客,国庆底价出击,全场最低1折起!</a>
+                        </p>
+                        <div style=" padding-left:18px;">
+                            <p>
+                                <a class="sprlink" href="#" id="37035_2.0.1" target="_blank">京东相机、家电、手机底价出击,中秋美食2折起,图书、奶粉满减!</a>
+                            </p>
+                        </div>
+                        <p>
+                            <span class="blt2"> ●</span> 
+                            <a href="#" target="_blank" id="37035_2.0">【家电】京东第二届家装节,电视家影最高优惠10000元!</a>
+                        </p>
+                        <div style="margin: 0pt; padding: 0pt 0pt 0pt 18px;">
+                            <p>
+                                <a class="sprlink" href="#" id="37035_2.0.1" target="_blank">京东家装节套装专区有惊喜,满8000减800,满15000减1500!</a>
+                            </p>
+                        </div>
+                        <p><span class="blt3"> ●</span> 
+                            <a href="#" target="_blank" id="37035_2.0">【电脑数码】京东电脑数码礼翻天,中秋国庆购狂欢!</a>
+                        </p>
+                        <div style="margin: 0pt; padding: 0pt 0pt 0pt 18px;">
+                            <p>
+                                <a class="sprlink" href="#" id="37035_2.0.1" target="_blank">京东数码影音、电脑整机、外设办公、电脑配件底价出击!</a>
+                            </p>
+                        </div>
+                        <p>
+                            <span class="blt4"> ●</span> 
+                            <a href="#" target="_blank" id="37035_2.0">【图书】京东中秋人月团圆,书碟不缺!</a>
+                        </p>
+                        <div style="margin: 0pt; padding: 0pt 0pt 0pt 18px;">
+                            <p>
+                                <a class="sprlink" href="#" id="37035_2.0.1" target="_blank">京东图书音像全场满200减30,减后满200再返200!</a>
+                            </p>
+                        </div>
+                    </div>
+                    <h3 id="normal" class="typo-h3"># Normal(品专-尾部表格1)</h3>
+                    <table>
+                        <tbody>
+                            <thead>
+                                <tr><td>低价奇迹</td><td>热力推荐</td><td>疯狂抢购</td><td>低价奇迹</td><td>热力推荐</td></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>冰洗突破全网低价</td>
+                                    <td>苹果APPLE底价中</td>
+                                    <td>家居用品 全场5折起</td>
+                                    <td>冰洗突破全网低价</td>
+                                    <td>>苹果APPLE底价中</td>
+                                </tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </tbody>
+                    </table>
+
+
+                    <table style="width: 100%; line-height:22px; text-align:center; margin:8px 0 4px;" cellpading="0" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#ddeafa">
+                                    <a target="_blank" href="#" id="37035_5.0.1">服装城</a>
+                                </td>
+                                <td bgcolor="#ddeafa">
+                                    <a target="_blank" href="#" id="37035_5.0.1">京东团购</a>
+                                </td>
+                                <td bgcolor="#ddeafa">
+                                    <a target="_blank" href="#" id="37035_5.0.1">夺宝岛</a>
+                                </td>
+                                <td bgcolor="#ddeafa">
+                                    <a target="_blank" href="#" id="37035_5.0.1">在线读书</a>
+                                </td>
+                                <td bgcolor="#ddeafa">
+                                    <a target="_blank" href="#" id="37035_5.0.1">京东社区</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- zhuanqu end here -->
+               
+                <div id="promotion_adv_container" class="sponsored">
+                    <h2>搜狗推广</h2>
+                    <ol style="line-height:1.5">
+                        <li id="ad_leftresult_0">
+                            <h3 class="pt " style="margin-bottom:1px;">
+                            <a href="#" onclick="return sogou_adclk(event,this)" target="" name="dttl"><em><!--red_beg-->京东<!--red_end--></em>商城360buy 100%正品行货 全场购物全网底价</a>&nbsp;<cite>www.360buy.com</cite></h3>
+                            <em><!--red_beg-->京东<!--red_end--></em>,品牌正品,价格更实惠,省钱又放心,全国货到付款!
+                        </li>
+                    </ol>
+                </div><!--sogou sponsor end here-->
+
+                <div>
+                    <div class="results">
+                        <!-- a -->
+                        <div id="columnrb" class="rb">
+                            <h3 class="pt">
+                                <a href="#" id="sogou_vr_30000701_0" target="#" name="dttl">
+                                    <em><!--red_beg-->京东<!--red_end--></em>网上商城-综合网购首选,正品行货,机打发票,售后上门取件,...
+                                </a>
+                            </h3>
+                            <div class="ft">
+                                <em><!--red_beg-->京东<!--red_end--></em>商城-专业的数码网上购物商城，产品包括数码、家电、手机、电脑配件、网络产品等数万种商品直销，便捷，诚信的服务，为您提供愉悦的网上商城购物体验！
+                            </div>
+                            <div class="fb">
+                                <cite id="cacheresult_info_0">京东网上商城 - www.360buy.com/&nbsp;-&nbsp;2天前</cite>&nbsp;-&nbsp;<a id="sogou_snapshot_0" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fwww.360buy.com%2F&amp;did=6d2c734cc2f286ab-002e9cecebaff69d-72da66a6ecea4eaefd99b86c1a85c569&amp;k=b57f81be1c962ba49bd8cd2b973209ca&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照</a>&nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fwww.360buy.com%2F&amp;did=6d2c734cc2f286ab-002e9cecebaff69d-72da66a6ecea4eaefd99b86c1a85c569&amp;k=b57f81be1c962ba49bd8cd2b973209ca&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%CD%F8%C9%CF%C9%CC%B3%C7-%D7%DB%BA%CF%CD%F8%B9%BA%CA%D7%D1%A1%2C%D5%FD%C6%B7%D0%D0%BB%F5%2C%BB%FA%B4%F2%B7%A2%C6%B1%2C%CA%DB%BA%F3%C9%CF%C3%C5%C8%A1%BC%FE%2C...&amp;st=0" sogou_preview_link="http://www.360buy.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;网上商城-综合网购首选,正品行货,机打发票,售后上门取件,..." onclick="sogou_preview('sogou_preview_0', 'link_0');return false;" id="sogou_preview_0" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>
+                            </div>
+                        <div id="subcolumn">
+                            <table class="extlink">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="#" id="sogou_vr_30000701_link1_0" target="_blank">手机</a>
+                                        </td>
+                                        <td>
+                                            <a href="#" id="sogou_vr_30000701_link2_0" target="_blank">团购</a>
+                                        </td>
+                                    </tr>
+<tr>
+<td><a href="http://www.360buy.com/products/670-671-672.html" id="sogou_vr_30000701_link3_0" target="_blank">笔记本</a></td><td><a href="http://book.360buy.com/" id="sogou_vr_30000701_link4_0" target="_blank">图书</a></td>
+</tr>
+<tr>
+<td><a href="http://www.360buy.com/digital.html" id="sogou_vr_30000701_link5_0" target="_blank">手机数码</a></td><td><a href="http://www.360buy.com/products/737-794-798.html" id="sogou_vr_30000701_link6_0" target="_blank">平板电视</a></td>
+</tr>
+<tr>
+<td><a href="http://auction.360buy.com/" id="sogou_vr_30000701_link7_0" target="_blank">夺宝岛</a></td><td><a href="http://www.360buy.com/computer.html" id="sogou_vr_30000701_link8_0" target="_blank">电脑软件办公</a></td>
+</tr>
+</tbody></table>
+<style>
+.taosearch {
+  padding-left:17px;
+  *padding-left:4px;
+  font-family:simsun;
+  height:30px;
+}
+.taobtn {
+  background:#dedede url(/images/vr/taobtn.gif) no-repeat;
+  padding-left:3px;
+  line-height:25px;
+  display:inline-block;
+  float:left;
+  margin-left:5px;
+}
+.taobtn_in {
+  background:url(/images/vr/taobtn.gif) no-repeat right top;
+  padding:0 19px 0 16px;
+  display:inline-block;
+  color:#000;
+  text-decoration:none;
+}
+.vrinput, .vrinputfocus {
+  border:1px solid;
+  border-color:#A9A9A9 #D0D0D0 #D0D0D0 #A9A9A9;
+  background:#fff url(/images/vr/vrinput.gif) no-repeat;
+  padding:0 30px 0 5px;
+  height:22px;
+  font:13px/22px Arial, Helvetica, sans-serif;
+  color:#888;
+  *vertical-align:middle;
+}
+ .vrinputfocus {
+  border-color:#639CEA;
+  outline:none;
+  color:#000;
+}
+</style>
+<script type="text/javascript">
+(function(){ 
+var search_vr_id = "sogou_vr_30000701_submit_0";
+var formid = "smallform_0";
+var hideformid = "hidesmallform_0";
+var defalutInputValue = "京东商品搜索";
+var href = "http://www.360buy.com/";
+var query = "";
+
+function sub_search_form(){
+    if ($s.$(formid).getAttribute("formcharset") == "utf-8"){
+        document.charset="utf-8";
+    }
+    var input = $s.$(formid).getElementsByTagName("input")[0];
+    if(input.value == defalutInputValue || input.value == ''){
+        query = "";
+    }else{
+        query = input.value;
+    }
+    try{if (typeof(uigsPB) != "undefined" &amp;&amp; typeof(search_vr_id) != "undefined" &amp;&amp; typeof(href) != "undefined" &amp;&amp; typeof(query) != "undefined" ){uigsPB(search_vr_id + "&amp;href=" + (href) + "?query="+(query));}}catch(EE){}
+    
+    
+    setTimeout(function(){document.charset='gbk';}, 100);
+    if(input.value == defalutInputValue || input.value == ''){
+        $s.$(hideformid).submit();
+        return false;
+    }
+    return true;
+}
+
+    
+function init(){
+    if($s.$(formid)){
+        $s.$(formid).getElementsByTagName("span")[0].getElementsByTagName("a")[0].onclick = function(){
+            if (sub_search_form()){
+                $s.$(formid).submit();
+            }
+            return false;
+        };
+    
+        $s.$(formid).onsubmit = function(){
+            return sub_search_form();
+        }
+    }else{
+        setTimeout(init,100);
+        return;
+    }
+}
+
+init();
+})();
+    
+
+</script>
+<form action="http://www.360buy.com/" id="hidesmallform_0" method="get" target="_blank" display="none"></form>
+<form name="searchform" class="taosearch" action="http://search.360buy.com/Search" formcharset="gbk" accept-charset="gbk" target="_blank" id="smallform_0">
+<input type="text" onfocus="if (this.value == '京东商品搜索') {this.value='';}this.className='vrinputfocus';this.style.color='#000'" style="float:left;" onblur="this.className='vrinput'; if(this.value != '') return; this.value='京东商品搜索';this.style.color='#888';" class="vrinput" value="京东商品搜索" name="keyword"><span class="taobtn"><a class="taobtn_in" href="#">搜 索</a></span>
+</form>
+</div>
+<div id="extinfo" class="extinfo"></div>
+</div>
+<!--STATUS VR OK-->
+<!--VR TYPE:30000701,RANK:0-->
+
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg1-->  <a href="http://www.360buy.com/products/652-653-655.html" id="uigs_d0_1" target="_blank" name="dttl"><!--awbg1--><em><!--red_beg-->京东<!--red_end--></em>手机-手机 【行情 价格 评价 正品行货】</a>  </h3>  <div id="cacheresult_summary_1" class="ft">  <!--summary_beg-->您好！欢迎来到<em><!--red_beg-->京东<!--red_end--></em>商城！ 加载中，请稍候... 加载中，请稍候... 促销活动 品牌： 价格： 操控： 共924个商品 库存： 请选择省份 请选择省份 请选择省份 请选择省份 请选择...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_1">京东网上商城 - www.360buy.com/...-653-655.html&nbsp;-&nbsp;2012-9-6</cite>  <!--resultinfodate:2012-9-6-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_1" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fwww.360buy.com%2Fproducts%2F652-653-655.html&amp;did=6d2c734cc2f286ab-002e9cecebaff69d-20f8ebb141ada045f86ff0713e826518&amp;k=db8f1e905805cb7fc3b21690fbf258e4&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fwww.360buy.com%2Fproducts%2F652-653-655.html&amp;did=6d2c734cc2f286ab-002e9cecebaff69d-20f8ebb141ada045f86ff0713e826518&amp;k=db8f1e905805cb7fc3b21690fbf258e4&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%CA%D6%BB%FA-%CA%D6%BB%FA+%A1%BE%D0%D0%C7%E9+%BC%DB%B8%F1+%C6%C0%BC%DB+%D5%FD%C6%B7%D0%D0%BB%F5%A1%BF&amp;st=0" sogou_preview_link="http://www.360buy.com/products/652-653-655.html" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;手机-手机 【行情 价格 评价 正品行货】" onclick="sogou_preview('sogou_preview_1', 'link_1');return false;" id="sogou_preview_1" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:1-->
+        
+
+
+
+        <div class="vrwrap">
+<style>
+.newscite {
+ color:#666;
+}
+.newsvr {
+ border-collapse:collapse;
+ line-height:1.5;
+}
+.newsvr td {
+ padding:0;
+ vertical-align:top;
+}
+.newsvr .newspicbox {
+ width:16px;
+ padding-top:4px;
+}
+.newspic {
+ padding:1px;   
+ border:1px solid #ccc;
+ margin-right:9px;
+}
+</style>
+<script>
+
+$s.wait("nnews_title", function(obj){
+    var linknode = obj.getElementsByTagName("a")[0], fom = $s.$("nnews_form");
+    linknode.onclick = function(){
+        fom.submit();
+        return false;
+    }
+});
+
+</script>
+<form action="http://news.sogou.com/news?mode=1&amp;sort=0&amp;fixrank=1&amp;query=%BE%A9%B6%AB&amp;shid=cnc" method="post" id="nnews_form" target="_blank">
+<input type="hidden" value="http://www.yangtse.com/system/2012/09/20/014632130.shtml    http://roll.sohu.com/20120920/n353632159.shtml  http://xm.ifeng.com/fashion/xiamen_2012_09/20/347703_0.shtml    http://news.sdfdc.com/html/2012-09-20/129364_1.html" name="fixrankurl"><input type="hidden" value="1348127587851" name="fixrankver"><input type="hidden" value="a829277305ed88483564c6d1210d9409" name="fixranksig">
+<h3 id="nnews_title" class="vrt">
+<a id="sogou_vr_30000501_2" href="http://news.sogou.com/news?mode=1&amp;sort=0&amp;fixrank=1&amp;query=%BE%A9%B6%AB&amp;shid=cnc" target="_blank"><em>京东</em>的最新相关信息
+                </a>
+</h3>
+<table class="newsvr">
+<tbody>
+<tr>
+<td class="newspicbox">&nbsp;</td><td>
+<div class="newscite">
+<a id="sogou_vr_30000501_sub0_2" href="http://www.yangtse.com/system/2012/09/20/014632130.shtml" target="_blank">国美暗讽<em><!--red_beg-->京东<!--red_end--></em>模式没未来：线上线下融合是归宿_扬子晚...</a>
+                        &nbsp;<cite>扬子晚报网</cite>
+                        - 29分钟前</div>
+<!--summary_beg-->2012年9月20日... 来源： 大洋网-广州日报 分享到： QQ空间 新浪微博 腾讯微博 人人网 国美暗讽<em><!--red_beg-->京东<!--red_end--></em>模式没有未来 本报讯 （记者 刘新宇） 发改委、商务部就上...<!--summary_end--><div class="newscite">
+<a id="sogou_vr_30000501_sub1_2" href="http://roll.sohu.com/20120920/n353632159.shtml" target="_blank">婚庆团购潮：还看<em><!--red_beg-->京东<!--red_end--></em>亲亲家典品牌预定团-搜狐滚动</a>
+                            &nbsp;<cite>搜狐滚动</cite>
+                            - 30分钟前</div>
+<div class="newscite">
+<a id="sogou_vr_30000501_sub2_2" href="http://xm.ifeng.com/fashion/xiamen_2012_09/20/347703_0.shtml" target="_blank"><em><!--red_beg-->京东<!--red_end--></em>商城闯入网页游戏市场 意在"流量变现"_厦门频道_凤...</a>
+                            &nbsp;<cite>凤凰网</cite>
+                            - 35分钟前</div>
+<div class="newscite">
+<a id="sogou_vr_30000501_sub3_2" href="http://news.sdfdc.com/html/2012-09-20/129364_1.html" target="_blank">国美暗讽<em><!--red_beg-->京东<!--red_end--></em>模式没有未来 明战变暗战 - 家居资讯 - 山东...</a>
+                            &nbsp;<cite>山房网</cite>
+                            - 36分钟前</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!--STATUS VR OK-->
+<!--VR TYPE:30000501,RANK:2-->
+</form>
+</div>
+
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg3-->  <a href="http://club.360buy.com/" id="uigs_d0_3" target="_blank" name="dttl"><!--awbg3--><em><!--red_beg-->京东<!--red_end--></em>社区首页-<em><!--red_beg-->京东<!--red_end--></em>商城</a>  </h3>  <div id="cacheresult_summary_3" class="ft">  <!--summary_beg--><em><!--red_beg-->京东<!--red_end--></em>论坛购物社区，提供手机数码、家用电器、办公家具、服饰鞋帽、钟表首饰、母婴用品、保健食品、儿童玩具、图书、音像以及化妆品等论坛板块，360buy社区拥有庞大的购物...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_3">京东网上商城 - club.360buy.com/&nbsp;-&nbsp;2012-9-17</cite>  <!--resultinfodate:2012-9-17-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_3" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fclub.360buy.com%2F&amp;did=6d2c734cc2f286ab-f61f3b933b9a8d53-11e47c05c82d6b5d7c22f463c55af72e&amp;k=5d6c6ffad726980901cca316e44f4be2&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fclub.360buy.com%2F&amp;did=6d2c734cc2f286ab-f61f3b933b9a8d53-11e47c05c82d6b5d7c22f463c55af72e&amp;k=5d6c6ffad726980901cca316e44f4be2&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%C9%E7%C7%F8%CA%D7%D2%B3-%BE%A9%B6%AB%C9%CC%B3%C7&amp;st=0" sogou_preview_link="http://club.360buy.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;社区首页-&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;商城" onclick="sogou_preview('sogou_preview_3', 'link_3');return false;" id="sogou_preview_3" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:3-->
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg4-->  <a href="http://tuan.360buy.com/" id="uigs_d0_4" target="_blank" name="dttl"><!--awbg4--><em><!--red_beg-->京东<!--red_end--></em>团购-<em><!--red_beg-->京东<!--red_end--></em>商城|北京团购</a>  </h3>  <div id="cacheresult_summary_4" class="ft">  <!--summary_beg--><em><!--red_beg-->京东<!--red_end--></em>商城团购为您提供北京地区团购服务，蕴含了赶集网，满座，like团等网站商品团购，像精品团购手机，电影票，化妆品，美食，旅游门票，酒店，图书，ktv等等应有尽有；<em><!--red_beg-->京<!--red_end--></em>...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_4">京东网上商城 - tuan.360buy.com/&nbsp;-&nbsp;2012-9-11</cite>  <!--resultinfodate:2012-9-11-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_4" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Ftuan.360buy.com%2F&amp;did=6d2c734cc2f286ab-7bace9d2381897ae-266188d0229ede7ed42ffade14748ba2&amp;k=f113d8b66d60b81afb0629647a2cf9ba&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Ftuan.360buy.com%2F&amp;did=6d2c734cc2f286ab-7bace9d2381897ae-266188d0229ede7ed42ffade14748ba2&amp;k=f113d8b66d60b81afb0629647a2cf9ba&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%CD%C5%B9%BA-%BE%A9%B6%AB%C9%CC%B3%C7%7C%B1%B1%BE%A9%CD%C5%B9%BA&amp;st=0" sogou_preview_link="http://tuan.360buy.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;团购-&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;商城|北京团购" onclick="sogou_preview('sogou_preview_4', 'link_4');return false;" id="sogou_preview_4" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:4-->
+        
+
+
+
+        <div class="vrwrap">
+<style>
+                .phonenum{font-size: medium;}
+            </style>
+<h3 class="vrt">
+<a id="sogou_vr_20009304_5" href="http://www.360buy.com/help/callcenter.aspx" target="_blank"><em><!--red_beg-->京东<!--red_end--></em>商城客服电话</a>
+</h3>
+<table class="vrbox">
+<tbody>
+<tr>
+<td class="vrpic"><a id="sogou_vr_20009304_img_5" target="_blank"><img width="64" height="64" alt="京东客服电话" src="images/service.jpg"></a></td><td class="vrcontent">
+<!--
+                                summary_beg
+                            -->
+<div class="phonenum"><strong>400-606-5500</strong></div>
+<div class="vrg">搜狗提醒您注意虚假客服电话</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!--
+                STATUS VR OK
+            -->
+<!--
+                VR TYPE:
+                20009304
+                ,RANK:5
+            -->
+<cite>京东网上商城 - www.360buy.com
+                        -
+                        2012-9-20</cite>
+</div>
+<!--STATUS VR OK-->
+<!--VR TYPE:20009304,RANK:5-->
+
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg6-->  <a href="http://home.360buy.com/" id="uigs_d0_6" target="_blank" name="dttl"><!--awbg6-->登录<em><!--red_beg-->京东<!--red_end--></em>商城</a>  </h3>  <div id="cacheresult_summary_6" class="ft">  <!--summary_beg-->音像制品经营许可证苏宿批005号360TOP 奢侈品 迷你挑 <em><!--red_beg-->京东<!--red_end--></em> 好药师 我的订单 校园频道 在线读书 装机大师 礼品卡 手机<em><!--red_beg-->京东<!--red_end--></em> 企业客户 办公直通车 客户服务 常见问题 售后服务 在...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_6">京东网上商城 - home.360buy.com/&nbsp;-&nbsp;2012-9-10</cite>  <!--resultinfodate:2012-9-10-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_6" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fhome.360buy.com%2F&amp;did=6d2c734cc2f286ab-7a29e3e5a006d9c5-f2b181f23c3d4fd3cef0094ff4020c5b&amp;k=70da54f5ca030334d585194b5b8060e9&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fhome.360buy.com%2F&amp;did=6d2c734cc2f286ab-7a29e3e5a006d9c5-f2b181f23c3d4fd3cef0094ff4020c5b&amp;k=70da54f5ca030334d585194b5b8060e9&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%B5%C7%C2%BC%BE%A9%B6%AB%C9%CC%B3%C7&amp;st=0" sogou_preview_link="http://home.360buy.com/" sogou_preview_title="登录&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;商城" onclick="sogou_preview('sogou_preview_6', 'link_6');return false;" id="sogou_preview_6" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:6-->
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg7-->  <a href="http://m.360buy.com/" id="uigs_d0_7" target="_blank" name="dttl"><!--awbg7--><em><!--red_beg-->京东<!--red_end--></em>商城 - 手机版</a>  </h3>  <div id="cacheresult_summary_7" class="ft">  <!--summary_beg--><em><!--red_beg-->京东<!--red_end--></em>商城手机版提供了包括数码、家电、手机、电脑配件、网络产品、日用百货等数万种商品，手机快捷购物，就上<em><!--red_beg-->京东<!--red_end--></em>手机版。<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_7">京东网上商城 - m.360buy.com/&nbsp;-&nbsp;1天前</cite>  <!--resultinfodate:2012-9-18-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_7" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fm.360buy.com%2F&amp;did=6d2c734cc2f286ab-163aabae1b6b538f-95716ddf7c44d5f035e187ffdf9fbcfb&amp;k=1a2f960e42cf0dac6a00b8e0060f21ff&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fm.360buy.com%2F&amp;did=6d2c734cc2f286ab-163aabae1b6b538f-95716ddf7c44d5f035e187ffdf9fbcfb&amp;k=1a2f960e42cf0dac6a00b8e0060f21ff&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%C9%CC%B3%C7+-+%CA%D6%BB%FA%B0%E6&amp;st=0" sogou_preview_link="http://m.360buy.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;商城 - 手机版" onclick="sogou_preview('sogou_preview_7', 'link_7');return false;" id="sogou_preview_7" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:7-->
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg8-->  <a href="http://www.ehaoyao.com/" id="uigs_d0_8" target="_blank" name="dttl"><!--awbg8--><em><!--red_beg-->京东<!--red_end--></em>好药师网上药店 中国最大品种最全的网上药店 网上买药首选！</a>  </h3>  <div id="cacheresult_summary_8" class="ft">  <!--summary_beg--><em><!--red_beg-->京东<!--red_end--></em>好药师网上药店是中国最大、品种最全的网上药店，是通过国家药监局认证的合法网上药店，致力于打造最优质、最低价、最便捷的网上药店服务，并由执业药师、医师为您提...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_8">www.ehaoyao.com/&nbsp;-&nbsp;2天前</cite>  <!--resultinfodate:2012-9-18-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_8" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fwww.ehaoyao.com%2F&amp;did=17e2d114b8d29a9c-22389320ce5fcfa7-dd43e5e78c956d62e69f87e7d656ebc0&amp;k=8b06d1cbef9dab5fb2316170ba1809bc&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fwww.ehaoyao.com%2F&amp;did=17e2d114b8d29a9c-22389320ce5fcfa7-dd43e5e78c956d62e69f87e7d656ebc0&amp;k=8b06d1cbef9dab5fb2316170ba1809bc&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%BA%C3%D2%A9%CA%A6%CD%F8%C9%CF%D2%A9%B5%EA+%D6%D0%B9%FA%D7%EE%B4%F3%C6%B7%D6%D6%D7%EE%C8%AB%B5%C4%CD%F8%C9%CF%D2%A9%B5%EA+%CD%F8%C9%CF%C2%F2%D2%A9%CA%D7%D1%A1%A3%A1&amp;st=0" sogou_preview_link="http://www.ehaoyao.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;好药师网上药店 中国最大品种最全的网上药店 网上买药首选！" onclick="sogou_preview('sogou_preview_8', 'link_8');return false;" id="sogou_preview_8" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:8-->
+        
+
+
+
+        <div class="rb">  <h3 class="pt">  <!--awbg9-->  <a href="http://book.360buy.com/" id="uigs_d0_9" target="_blank" name="dttl"><!--awbg9--><em><!--red_beg-->京东<!--red_end--></em>商城 - 图书频道首页</a>  </h3>  <div id="cacheresult_summary_9" class="ft">  <!--summary_beg--><em><!--red_beg-->京东<!--red_end--></em>商城图书频道提供丰富的图书产品，种类包括小说、文学、传记、艺术、少儿、经济、管理、生活等图书的网上销售，为您提供最佳的购书体验。网购上<em><!--red_beg-->京东<!--red_end--></em>，省钱又放心！...<!--summary_end--></div>  <div class="fb">  <cite id="cacheresult_info_9">京东网上商城 - book.360buy.com/&nbsp;-&nbsp;2012-9-17</cite>  <!--resultinfodate:2012-9-17-->&nbsp;-&nbsp;<!--resultsnap_beg--><a id="sogou_snapshot_9" href="http://www.sogou.com/websnapshot?&amp;url=http%3A%2F%2Fbook.360buy.com%2F&amp;did=6d2c734cc2f286ab-9bf058ab0abff813-aaf2ec6fb89f2534925786c083c9e5d5&amp;k=f6e90221be7147a7e51bbaf90488a90d&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;w=01020400&amp;m=0&amp;st=0" style="color: #666666;" target="_blank">快照<!--resultsnap_end--></a>  &nbsp;-&nbsp;<a url="/websnapshot?preview=1&amp;url=http%3A%2F%2Fbook.360buy.com%2F&amp;did=6d2c734cc2f286ab-9bf058ab0abff813-aaf2ec6fb89f2534925786c083c9e5d5&amp;k=f6e90221be7147a7e51bbaf90488a90d&amp;encodedQuery=%BE%A9%B6%AB&amp;query=%BE%A9%B6%AB&amp;&amp;p=40040100&amp;dp=1&amp;title=%BE%A9%B6%AB%C9%CC%B3%C7+-+%CD%BC%CA%E9%C6%B5%B5%C0%CA%D7%D2%B3&amp;st=0" sogou_preview_link="http://book.360buy.com/" sogou_preview_title="&lt;em&gt;&lt;!--red_beg--&gt;京东&lt;!--red_end--&gt;&lt;/em&gt;商城 - 图书频道首页" onclick="sogou_preview('sogou_preview_9', 'link_9');return false;" id="sogou_preview_9" href="javascript:void(null);" style="color: #666666;" name="sogou_preview_links">预览</a>  </div>  </div>  <!--STATUS VR OK--><!--VR TYPE:,RANK:9-->
+        
+
+<!-- z -->
+ </div></div><!--search results end here-->
+
+                <div class="sponsored">
+                    <h2>搜狗推广</h2>
+                    <ol>
+                        <li>
+                            <h3 class="pt " style="margin-bottom:1px;">
+                                <a id="sogou_bottomblue_0" name="dttl" target="" onclick="return sogou_adclk(event,this)" href="#">
+                                <em>京东</em>商城360buy 100%正品行货 全场购物全网底价
+                                </a><cite>www.360buy.com</cite>
+                            </h3><em>京东</em>,品牌正品,价格更实惠,省钱又放心,全国货到付款!
+                        </li>
+                    </ol>
+                </div>
+
+
+
+        </div>
+		            <div class="foot">
+                <form id="searchForm1" name="searchForm1">
+                    <div class="qborder">
+                        <div class="qborder2">
+                            <input id="bottom_form_querytext" class="query" type="text" value="京东" size="32" name="query">
+                        </div>
+                        <img class="qreset2" width="15" height="16" title="清空" alt="清空" src="./images/ff/reset.gif" style="display: block;">
+                    </div>
+                    <input id="bottom_form_searchBt" class="sbtn1" type="submit" value="搜狗搜索" onmousedown="this.className='btnactive'" onmouseup="this.className='sbtn1'" onmouseout="this.className='sbtn1'" uigs="searchBtBottom">
+                    <a class="sogouhome" href="http://www.sogou.com/advanced/advanced.html" onclick="s(this,'')">高级搜索</a>
+                </form>
+            </div>
+        <div id="s_footer" class="cr">
+            <a id="sogou_webhelp" href="http://help.sogou.com/" target="_blank">搜索帮助</a>
+        |   <a id="sogou_feedback" href="javascript:dissatisfied('fankuiform', false)">对结果不满意？</a>
+        © 2012 SOGOU.COM
+            <a class="g" target="_blank" href="http://www.sogou.com/docs/terms.htm">免责声明</a>
+        </div>
+		<script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+	    <script type="text/javascript" src="./instant.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+    </body>
+</html>

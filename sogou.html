@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"> -->
+	    <link rel="stylesheet" href="css/home.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="t"></div>
+        <div id="l">
+            <img width="248px" height="64px" src="images/logo_l.gif">
+        </div>
+        <form id="sf" onsubmit="document.sf._ast.value=Math.round(new Date().getTime()/1000);" name="sf" action="/web" style="left: 57px;">
+            <div id="n">
+                <a href="http://news.sogou.com" onclick="s(this,"40030300")">新闻</a><strong>网页</strong><a href="http://mp3.sogou.com" onclick="s(this,"40030200")">音乐</a><a href="http://pic.sogou.com" onclick="s(this,"40030500")">图片</a><a href="http://v.sogou.com/" onclick="s(this,"40030600")">视频</a><a href="http://map.sogou.com" onclick="s(this,"40031000")">地图</a><a href="http://gouwu.sogou.com/" onclick="s(this,"40041300")">购物</a><a onclick="s(this,"40031204")" href="http://www.sogou.com/docs/more.htm">更多>></a>
+			<!--	<a href="http://news.sogou.com" onclick="s(this,"40030300")">新闻</a>
+				<strong>网页</strong>
+				<a href="http://mp3.sogou.com" onclick="s(this,"40030200")">音乐</a>
+				<a href="http://pic.sogou.com" onclick="s(this,"40030500")">图片</a>
+				<a href="http://v.sogou.com/" onclick="s(this,"40030600")">视频</a>
+				<a href="http://map.sogou.com" onclick="s(this,"40031000")">地图</a>
+				<a href="http://gouwu.sogou.com/" onclick="s(this,"40041300")">购物</a>
+				<a onclick="s(this,"40031204")" href="http://www.sogou.com/docs/more.htm">更多>></a> -->
+			</div>
+            <span class="adv">
+                <a onclick="this.href+='?w=01090100'" href="/advanced/advanced.html">高级搜索</a>
+            </span>
+            <div class="qborder">
+                <input id="query" class="q" autocomplete="off" maxlength="100" size="47" onfocus="this.select()" name="query">
+            </div>
+            <input id="stb" class="stb" type="submit" onmouseout="this.className='stb'" onmouseup="this.className='stb'" onmousedown="this.className='btnactive'" onclick="if(this.form.query.value=='')return false" value="搜狗搜索">
+        </form>
+        <div class="tools"><a target="_blank" onclick="s(this,"40031101")" href="http://pinyin.sogou.com/">输入法</a><a target="_blank" onclick="s(this,"40031202")" href="http://ie.sogou.com/">浏览器</a><a target="_blank" onclick="s(this,"40031203")" href="http://123.sogou.com/">网址导航</a><a target="_blank" onclick="s(this,"40031206")" href="http://wan.sogou.com/?rf=0401">游戏中心</a></div>
+        <div id="ft">
+			  <a href="http://fuwu.sogou.com/">企业推广</a>
+			- <a href="http://mail.sogou.com">搜狗免费邮箱</a>  
+			- <a href="http://job.sogou.com">诚聘英才</a>    
+			- <a onclick="s(this,"40030110")" href="http://top.sogou.com/">热搜榜</a>
+			- <a href="/docs/terms.htm">免责声明</a>
+            - <a onclick="this.href+='?w=01091500'" href="http://help.sogou.com/">帮助</a>
+            <br>
+            © 2012 SOGOU - <a class="g" target="_blank" href="http://www.miibeian.gov.cn">京ICP证050897号</a>
+            - <a class="ba" target="_blank" href="credentials/wen.html">文网文[2010]078号</a>
+        </div>
+
+    </body>
+</html>
